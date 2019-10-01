@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px solid black">
+    <tr>
+        <td>FullName</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Mobile</td>
+        <td>Image</td>
+        <td>Action-Delete</td>
+        <td>Image-update</td>
+    </tr>
+{% if b %}
+{% for i in b %}
+
+    <tr>
+        <td>{{i.userFullName}}</td>
+        <td>{{i.userEmail}}</td>
+        <td>{{i.userPassword}}</td>
+        <td>{{i.userMobile}}</td>
+        <td><img src='/media/{{i.userImage}}' height="70px" width="70px"/></td>
+        <td><a href="/user/imagedelete/?id={{i.userEmail}}">Delete-Data</a></td>
+        <td><a href="/user/imageupdate/?id={{i.userEmail}}">Edit</a></td>
+    </tr>
+{% endfor %}
+{% endif %}
+</table>
+</body>
+</html>

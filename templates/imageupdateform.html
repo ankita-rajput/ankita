@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if success %}
+    <script type="text/javascript">
+        alert("Successfully Registered");
+    </script>
+    {% endif %}
+
+    <label>UserFullName</label>
+    <input type="text" value="{{b.userFullName}}" name="username" /><br/>
+    <label>EmailId</label>
+    <input type="email" value="{{b.userEmail}}" name="useremail" disabled/><br/>
+    <label>Password</label>
+    <input type="password" value="{{b.userPassword}}" name="userpassword" placeholder="password here"><br/>
+    <label>Mobile</label>
+    <input type="text" value="{{b.userMobile}}" name="usermobile" placeholder="Contact here"><br/>
+    <label>Image</label>
+    <img src="/media/{{b.userImage}}" height="70px" width="70px">
+    <input type="file" name="userimage" id="userimage"><br/>
+    <input type="submit"  value="Update-Data">
+</form>
+</body>
+</html>

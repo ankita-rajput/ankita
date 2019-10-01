@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {% if success %}
+    <script type="text/javascript">
+        alert("Successfully Registered");
+    </script>
+    {% endif %}
+    <label>Name</label>
+    <input type="text" name="username" placeholder="Name here"><br/>
+    <label>EmailId</label>
+    <input type="email" name="useremail" placeholder="Email here"/><br/>
+    <label>Password</label>
+    <input type="password" name="userpassword" placeholder="password here"><br/>
+    <label>Mobile</label>
+    <input type="text" name="usermobile" placeholder="Contact here"><br/>
+    <input type="submit"  value="submit">
+</form>
+</body>
+</html>

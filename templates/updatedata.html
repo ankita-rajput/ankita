@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+  {% csrf_token %}
+    {% if success %}
+    <script type="text/javascript">
+        alert("Successfully Registered");
+    </script>
+    {% endif %}
+    <label>EmailId</label>
+    <input type="text" value="{{a.userEmail}}" id="userEmail" name="userEmail"/><br>
+    <label>Password</label>
+    <input type="password" name="userpassword" placeholder="password here"/><br/>
+    <label>Mobile</label>
+    <input type="text" name="usermobile" placeholder="Contact here"/><br/>
+    <input type="submit"  value="Update-Data"/>
+</form>
+</body>
+</html>
